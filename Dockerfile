@@ -7,4 +7,7 @@ RUN modular install mojo
 
 ENV MODULAR_HOME="/root/.modular"
 ENV PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
+
 RUN sed -i '/^\[user\]$/ { N; /\nid =/d; }' $MODULAR_HOME/modular.cfg
+
+CMD ["mojo"]
